@@ -596,8 +596,11 @@ workflows:
           script: $UNITY_BIN -batchmode -quit -returnlicense -nographics
 
   native-android:
-    name: Native Android ialex
+    name: Native Android
     max_build_duration: 120
+    triggering:
+      events:                       # List the events that trigger builds
+        - push
     #instance_type: linux_x2
     working_directory: android/android-native-quick-start
     environment:
@@ -606,7 +609,7 @@ workflows:
       groups:
         - google_play
       vars:
-        PACKAGE_NAME: "io.codemagic.androidquicksample-ialex"
+        PACKAGE_NAME: "io.codemagic.androidquicksample"
     scripts:
       - name: Set Android SDK location
         script: |
