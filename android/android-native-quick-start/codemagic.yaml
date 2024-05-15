@@ -31,6 +31,7 @@ workflows:
         recipients:
           - user_1@example.com
           - user_2@example.com
+          - alex.eze@interswitchgroup.com
         notify:
           success: true
           failure: false
